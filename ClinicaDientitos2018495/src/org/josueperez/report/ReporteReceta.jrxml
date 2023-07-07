@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteReceta" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bae32e05-98b5-4411-a599-767d7ea079a6">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1378"/>
+	<parameter name="codReceta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Windows 10\\Downloads\\ClinicaDientitos2018495\\src\\org\\josueperez\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="numero" class="java.lang.String"/>
+	<parameter name="rep" class="java.lang.String"/>
+	<parameter name="fir" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select * from Recetas where codigoReceta =$P{codReceta};]]>
+	</queryString>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="572" height="752" uuid="5d662885-a813-495b-9eac-d1dba884e70d"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="371" y="85" width="164" height="135" uuid="769fe055-9663-4ba7-a8e9-43f1f06c5c22"/>
+				<imageExpression><![CDATA[$P{numero}]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="244" y="578" width="250" height="138" uuid="40c468b7-b4b2-4fda-894e-24d8fce90948"/>
+				<imageExpression><![CDATA[$P{fir}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="215" splitType="Stretch">
+			<textField>
+				<reportElement x="157" y="184" width="100" height="20" forecolor="#FF0000" uuid="6b8094f0-3532-46bd-aa7d-efe7ed2e3511"/>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="184" width="100" height="20" uuid="736f29be-2a11-4226-ba69-0087e0d8463e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero de Receta]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="418" y="184" width="100" height="20" uuid="e3889312-5841-4963-8721-148941d55eed"/>
+				<textFieldExpression><![CDATA[$F{fechaReceta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="184" width="100" height="20" uuid="3de41a23-000b-4350-97b8-2327b141f0b5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Emision: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="132" width="100" height="20" uuid="919e8877-b553-4ec6-878f-82c434d81991"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Recetas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="0" width="259" height="20" uuid="8e155470-b60a-444a-89c1-56cf58fd54e8"/>
+				<textElement>
+					<font fontName="Berlin Sans FB Demi" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Porque Tu Sonrisa Nos Impulsa]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<subreport>
+				<reportElement x="49" y="0" width="498" height="51" uuid="cacd6205-cab1-4fbe-8023-744c7a5b1216"/>
+				<subreportParameter name="codReceta">
+					<subreportParameterExpression><![CDATA[$P{codReceta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{rep}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

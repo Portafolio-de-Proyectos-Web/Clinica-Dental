@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="587.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josueperez.controller.ProgramadorController">
+   <children>
+      <Label layoutX="-7.0" layoutY="-9.0" prefHeight="414.0" prefWidth="596.0" style="-fx-background-color: #3b83bd;" />
+      <ImageView fitHeight="149.0" fitWidth="123.0" layoutX="217.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Usuario.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="39.0" layoutY="167.0" prefHeight="50.0" prefWidth="251.0" text="Nombre: Josue David Perez Cap ">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="12.0" text="Programador" textFill="#1a1717">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="155.0" fitWidth="168.0" layoutX="420.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Programador.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="39.0" layoutY="209.0" text="Carnet: 2018-495">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="234.0" text="Codigo Tecnico: IN5AV">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="261.0" text="Codigo Academico: PE5EV">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="18.0" layoutY="11.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="50.0" prefWidth="43.0" style="-fx-background-color: #3b83bd;" styleClass="button1" stylesheets="@../resource/ClinicaDientitosCSS.css" />
+      <ImageView fitHeight="59.0" fitWidth="44.0" layoutX="18.0" layoutY="14.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
